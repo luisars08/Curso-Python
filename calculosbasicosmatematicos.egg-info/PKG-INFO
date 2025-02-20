@@ -1,0 +1,10 @@
+Metadata-Version: 2.2
+Name: calculosbasicosmatematicos
+Version: 1.0
+Summary: Paquete para cálculos básicos, suma, resta, multiplicación
+Home-page: 
+Author: Luis
+Author-email: iscluisars@gmail.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary
