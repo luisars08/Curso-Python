@@ -6,7 +6,8 @@ def urlWeb(link):
     return dirWeb
 
 def docWeb(dirWeb):
-    documento = BeautifulSoup.select(dirWeb.text,"html.parser")
+    ayuda = dirWeb.text
+    documento = BeautifulSoup.select(ayuda,"html.parser")
     return documento
 
 def buscaImagen(valor):
@@ -21,14 +22,22 @@ def buscaTitulo(valor):
     for titulo in docFinal.select(valor):
         print(titulo.text)
 
+def buscarBoton(valor):
+    for boton in docFinal.select(valor):
+        print(boton.attrs["href"])
+
 www = urlWeb("https://www.python.beispiel.programmierenlernen.io/")
 docFinal = BeautifulSoup(www.text,"html.parser") #falta POO
+
 bloqueImagen = ".card-block img"
 bloqueParrafo = ".card-text"
 bloqueTitulo = ".card-title span"
+bloqueBoton = ".navigation a"
+
 #buscaImagen(bloqueImagen)
 #buscaTexto(bloqueParrafo)
-buscaTitulo(bloqueTitulo)
+#buscaTitulo(bloqueTitulo)
+#buscarBoton(bloqueBoton)
 
 
 
