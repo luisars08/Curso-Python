@@ -1,11 +1,19 @@
-class Persona():
-    def __init__(self,nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+class CuentaBancaria():
 
-    def presentarse(self):
-        print("Hola mi nombre es: ", self.nombre, " y tengo ", self.edad)
+    def __init__(self,titular,saldo):
+        self.titular = titular
+        self.saldo = saldo
+
+    def depositar(self,cantidad):
+        self.saldo = self.saldo + cantidad
+        return self.saldo
     
-persona1 = Persona("Luis", 24)
+    def retirar(self,cantidad):
+        self.saldo = self.saldo - cantidad
+        return self.saldo
+    
+juan = CuentaBancaria("Juan Bodoque", 10000)
 
-persona1.presentarse()
+print(juan.depositar(100))
+
+print(juan.retirar(100))
