@@ -1,19 +1,24 @@
-class CuentaBancaria():
+class Empleado():
+    def __init__(self,nombre, sueldo):
+        self.nombre = nombre
+        self.sueldo = sueldo
 
-    def __init__(self,titular,saldo):
-        self.titular = titular
-        self.saldo = saldo
-
-    def depositar(self,cantidad):
-        self.saldo = self.saldo + cantidad
-        return self.saldo
+    def mostrarInfo(self):
+        return "Nombre: " + self.nombre + " Sueldo: " + str(self.sueldo)
     
-    def retirar(self,cantidad):
-        self.saldo = self.saldo - cantidad
-        return self.saldo
+class Gerente(Empleado):
+
+    def __init__(self,nombre,sueldo,departamento):
+
+        super().__init__(nombre,sueldo)
+
+        self.departamento = departamento
+
+    def mostrarInfo(self):
+        return super().mostrarInfo() + " Departamento: " + self.departamento
     
-juan = CuentaBancaria("Juan Bodoque", 10000)
+p1 = Empleado("Luis", 10000)
+p2 = Gerente("Ars", 20000, "CEO")
 
-print(juan.depositar(100))
-
-print(juan.retirar(100))
+print(p1.mostrarInfo())
+print(p2.mostrarInfo())
