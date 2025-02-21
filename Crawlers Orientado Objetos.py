@@ -1,43 +1,48 @@
 from bs4 import BeautifulSoup
+
 import requests
 
-def urlWeb(link):
-    dirWeb = requests.get(link)
-    return dirWeb
 
-def docWeb(dirWeb):
-    ayuda = dirWeb.text
-    documento = BeautifulSoup.select(ayuda,"html.parser")
-    return documento
+class PostCrawler():
 
-def buscaImagen(valor):
-    for imagen in docFinal.select(valor):
-        print(imagen.attrs["src"])
+    def __init__(self, titulo, emoticono, contenido, imagen):
 
-def buscaTexto(valor):
-    for parrafo in docFinal.select(valor):
-        print(parrafo.text)
-
-def buscaTitulo(valor):
-    for titulo in docFinal.select(valor):
-        print(titulo.text)
-
-def buscarBoton(valor):
-    for boton in docFinal.select(valor):
-        print(boton.attrs["href"])
-
-www = urlWeb("https://www.python.beispiel.programmierenlernen.io/")
-docFinal = BeautifulSoup(www.text,"html.parser") #falta POO
-
-bloqueImagen = ".card-block img"
-bloqueParrafo = ".card-text"
-bloqueTitulo = ".card-title span"
-bloqueBoton = ".navigation a"
-
-#buscaImagen(bloqueImagen)
-#buscaTexto(bloqueParrafo)
-#buscaTitulo(bloqueTitulo)
-#buscarBoton(bloqueBoton)
+        self.titulo    = titulo
+        self.emoticono = emoticono
+        self.contenido = contenido
+        self.imagen    = imagen
 
 
+class PostExtractor():
 
+    def extraeInfo(self):
+
+        miDoc = requests.get("https://www.python.beispiel.programmierenlernen.io/")
+
+        docFinal = BeautifulSoup(miDoc.text, "html.parser")
+
+        posts=[]
+
+        for card in docFinal.select(".card"):
+            titulo    = card.select(".card-title span")[1].text
+            emoticono = card.select_one(".emoji").text
+            contenido = card.select_one(".card-text").text
+            imagen    = card.select_one("img").attrs["src"]
+
+            crawled = PostCrawler(titulo, emoticono, contenido, imagen)
+            posts.append(crawled)
+
+        return posts
+
+unPost = PostExtractor()
+
+listaPost = unPost.extraeInfo()
+
+for elPosts in listaPost:
+
+    print(elPosts.emoticono)
+    print(elPosts.titulo)
+    print(elPosts.contenido)
+    print(elPosts.imagen)
+    print()
+#print(listaPost)
