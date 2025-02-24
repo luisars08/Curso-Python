@@ -6,6 +6,8 @@ from urllib.parse import urljoin
 
 import time
 
+import csv
+
 
 class PostCrawler():
 
@@ -64,4 +66,13 @@ for elPosts in listaPost:
     print(elPosts.contenido)
     print(elPosts.imagen)
     print()
+
 #print(listaPost)
+
+
+with open('posts.csv', 'w', newline='',encoding='utf-8') as csvfile:
+    postwriter = csv.writer(csvfile, delimiter=',',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+
+    for mipost in unPost.extraeInfo():
+        postwriter.writerow([mipost.emoticono,mipost.titulo,mipost.contenido, mipost.imagen])
