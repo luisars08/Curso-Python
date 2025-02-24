@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 
 import requests
 
+from urllib.parse import urljoin
+
 
 class PostCrawler():
 
@@ -17,7 +19,9 @@ class PostExtractor():
 
     def extraeInfo(self):
 
-        miDoc = requests.get("https://www.python.beispiel.programmierenlernen.io/")
+        urlBase = "https://www.python.beispiel.programmierenlernen.io/"
+
+        miDoc = requests.get(urlBase)
 
         docFinal = BeautifulSoup(miDoc.text, "html.parser")
 
@@ -27,7 +31,7 @@ class PostExtractor():
             titulo    = card.select(".card-title span")[1].text
             emoticono = card.select_one(".emoji").text
             contenido = card.select_one(".card-text").text
-            imagen    = card.select_one("img").attrs["src"]
+            imagen    = urljoin(urlBase,card.select_one("img").attrs["src"])
 
             crawled = PostCrawler(titulo, emoticono, contenido, imagen)
             posts.append(crawled)
