@@ -25,7 +25,7 @@ class PostExtractor():
 
         urlBase = "https://www.python.beispiel.programmierenlernen.io/"
 
-        posts=[]
+        #posts=[]
 
         while urlBase!= "":
 
@@ -41,8 +41,10 @@ class PostExtractor():
                 contenido = card.select_one(".card-text").text
                 imagen    = urljoin(urlBase,card.select_one("img").attrs["src"])
 
-                crawled = PostCrawler(titulo, emoticono, contenido, imagen)
-                posts.append(crawled)
+                #crawled = PostCrawler(titulo, emoticono, contenido, imagen)
+                #posts.append(crawled)
+
+                yield PostCrawler(titulo,emoticono,contenido,imagen)
 
             boton_siguiente = docFinal.select_one(".navigation .btn")
 
@@ -50,17 +52,22 @@ class PostExtractor():
                 rutas_absolutas = urljoin(urlBase,boton_siguiente.attrs["href"])
                 urlBase=rutas_absolutas
                 print(rutas_absolutas)
+
             else:
                 urlBase=""
+                
 
-        return posts
+        #return posts
 
 unPost = PostExtractor()
 
 listaPost = unPost.extraeInfo()
-
+contador = 0
 for elPosts in listaPost:
-
+    if contador == 12:
+        break
+    contador += 1
+    
     print(elPosts.emoticono)
     print(elPosts.titulo)
     print(elPosts.contenido)
@@ -70,9 +77,9 @@ for elPosts in listaPost:
 #print(listaPost)
 
 
-with open('posts.csv', 'w', newline='',encoding='utf-8') as csvfile:
+"""with open('posts.csv', 'w', newline='',encoding='utf-8') as csvfile:
     postwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
     for mipost in unPost.extraeInfo():
-        postwriter.writerow([mipost.emoticono,mipost.titulo,mipost.contenido, mipost.imagen])
+        postwriter.writerow([mipost.emoticono,mipost.titulo,mipost.contenido, mipost.imagen])"""
