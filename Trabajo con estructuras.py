@@ -1,15 +1,12 @@
 import queue
 
-miCola = queue.PriorityQueue()
+miCola = queue.Queue(4)
 
-miCola.put((3,"Madrid"))
-miCola.put((1,"Bogotá"))
-miCola.put((2,"México DF"))
+miCola.put("Madrid")
+miCola.put("Bogotá")
+miCola.put("México DF")
+#miCola.put("Lima")
 
-print(miCola.get())
-
-print("A continicaión se imprimen los elementos restantes en la cola")
-
-for elemento in miCola.queue:
-
-    print(elemento)
+while not miCola.empty():
+    
+    print(miCola.get())
