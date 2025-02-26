@@ -1,9 +1,13 @@
 from io import open
 
-archivo_externo = open("primerArchivo.txt","r")
+archivo_externo = open("primerArchivo.txt","r+")
 
-#archivo_externo.seek(len(archivo_externo.read())/2)
+lista_archivo = archivo_externo.readlines()
 
-archivo_externo.seek(len(archivo_externo.readline()))
+lista_archivo[1] = "Hoy es Viernes y ya llegado el ansiado fin de semana \n"
 
-print(archivo_externo.read())
+archivo_externo.seek(0)
+
+archivo_externo.writelines(lista_archivo)
+
+archivo_externo.close()
