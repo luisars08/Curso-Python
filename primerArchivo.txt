@@ -1,1 +1,2 @@
 Bienvenidos a los archivos externos
+Guardamos información de forma permanente
