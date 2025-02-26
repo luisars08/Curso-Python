@@ -1,4 +1,4 @@
-sistema_solar = "Mercurio,Venus,Tierra,Marte,Júpiter,Saturno,Urano,Neptuno,Plutón"
+sistema_solar = "Mercurio,Venus,Tierra,Marte,Júpiter,Saturno,Urano,Neptuno,Plutón,Tierra,Mercurio"
 
 planetas = set()
 
