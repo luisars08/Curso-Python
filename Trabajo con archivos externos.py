@@ -2,10 +2,8 @@ from io import open
 
 archivo_externo = open("primerArchivo.txt","r")
 
-#archivo_externo.write("\nGuardamos información de forma permanente")
+print(archivo_externo.read())
 
-informacion_lineas = archivo_externo.readlines()
+archivo_externo.seek(0)
 
-archivo_externo.close()
-
-print(informacion_lineas[1])
+print(archivo_externo.read())
