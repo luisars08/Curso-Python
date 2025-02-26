@@ -1,13 +1,10 @@
-from io import open
+import os 
 
-archivo_externo = open("primerArchivo.txt","r+")
+import io
 
-lista_archivo = archivo_externo.readlines()
+#os.makedirs("PruebaDirectorio") Crear directorio
 
-lista_archivo[1] = "Hoy es Viernes y ya llegado el ansiado fin de semana \n"
+os.chdir("PruebaDirectorio") #Movernos entre directorio
 
-archivo_externo.seek(0)
+print(os.getcwd()) #ver en que directorio estoy
 
-archivo_externo.writelines(lista_archivo)
-
-archivo_externo.close()
