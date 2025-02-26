@@ -1,9 +1,15 @@
-sistema_solar = "Mercurio,Venus,Tierra,Marte,Júpiter,Saturno,Urano,Neptuno,Plutón,Tierra,Mercurio"
+import queue
 
-planetas = set()
+miCola = queue.Queue()
 
-for planeta in sistema_solar.split(","):
-    planetas.add(planeta)
+miCola.put("Madrid")
+miCola.put("Bogotá")
+miCola.put("México DF")
 
-print(planetas)
-print(len(planetas))
+print(miCola.get())
+
+print("A continicaión se imprimen los elementos restantes en la cola")
+
+for elemento in miCola.queue:
+
+    print(elemento)
