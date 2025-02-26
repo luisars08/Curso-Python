@@ -1,6 +1,6 @@
 import queue
 
-miCola = queue.Queue()
+miCola = queue.LifoQueue()
 
 miCola.put("Madrid")
 miCola.put("Bogotá")
