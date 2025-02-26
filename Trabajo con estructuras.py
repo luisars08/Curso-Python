@@ -1,10 +1,10 @@
 import queue
 
-miCola = queue.LifoQueue()
+miCola = queue.PriorityQueue()
 
-miCola.put("Madrid")
-miCola.put("Bogotá")
-miCola.put("México DF")
+miCola.put((3,"Madrid"))
+miCola.put((1,"Bogotá"))
+miCola.put((2,"México DF"))
 
 print(miCola.get())
 
