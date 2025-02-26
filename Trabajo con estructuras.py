@@ -5,8 +5,8 @@ miCola = queue.Queue(4)
 miCola.put("Madrid")
 miCola.put("Bogotá")
 miCola.put("México DF")
-#miCola.put("Lima")
+miCola.put("Lima")
 
-while not miCola.empty():
-    
+while miCola.full():
+
     print(miCola.get())
