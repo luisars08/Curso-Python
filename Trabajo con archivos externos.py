@@ -2,9 +2,16 @@ import os
 
 import io
 
-#os.makedirs("PruebaDirectorio") Crear directorio
+os.makedirs("PracticaDirectorio")
 
-os.chdir("PruebaDirectorio") #Movernos entre directorio
+os.chdir("PracticaDirectorio")
 
-print(os.getcwd()) #ver en que directorio estoy
+archivo_externo = open("Ejemplo.txt", "w")
 
+archivo_externo.write("Texto de ejemplo...")
+
+print(os.getcwd())
+
+print(os.listdir("./"))
+
+archivo_externo.close()
