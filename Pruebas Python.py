@@ -1,19 +1,16 @@
-nombrePersonas = []
+from io import open
 
-def agregarNOmbre(lista, nombreIntroducido):
-    try:
-        if nombreIntroducido in lista:
-            raise ValueError
-        else:
-            lista.append(nombreIntroducido)
-    except ValueError:
-        print("Error. Este nombre ya esta introducido",nombreIntroducido)
+archivo_prueba = open("primerArchivoTarea.txt", "r")
 
-introduccidos = 1
+lineas = archivo_prueba.readlines()
 
-while introduccidos<11:
-    nombre=input("Escrine un nombre: ")
-    agregarNOmbre(nombrePersonas,nombre)
-    introduccidos+=1
+archivo_prueba.close()
 
-print( nombrePersonas)
+palabra = "Un recuerdo invade mi mente."
+palabra = "noche"
+#print(lineas[0])
+
+for parrafo in lineas:
+    if palabra in parrafo:
+        break
+    print(parrafo)
