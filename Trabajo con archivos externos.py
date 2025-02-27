@@ -2,11 +2,11 @@ import os
 
 import io
 
-os.makedirs("PracticaDirectorio2")
+#os.makedirs("PracticaDirectorio2")
 
 os.chdir("PracticaDirectorio2")
 
-archivo_externo = open("Ejemplo.txt", "w")
+archivo_externo = open("Ejemplo.docx", "w")
 
 archivo_externo.write("Texto de ejemplo...")
 
