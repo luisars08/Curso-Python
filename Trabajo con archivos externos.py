@@ -6,7 +6,7 @@ import io
 
 os.chdir("PracticaDirectorio2")
 
-os.rename("Ejemplo.txt", "ArchivoEliminar.txt")
+os.remove("ArchivoEliminar.txt")
 
 print(os.getcwd())
 
