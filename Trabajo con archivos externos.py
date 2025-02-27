@@ -6,9 +6,13 @@ import io
 
 os.chdir("PracticaDirectorio2")
 
-os.remove("ArchivoEliminar.txt")
+os.remove("Ejemplo.docx")
 
-print(os.getcwd())
+os.chdir("../")
 
-print(os.listdir("./"))
+os.rmdir("PracticaDirectorio2")
+
+#print(os.getcwd())
+
+#print(os.listdir("./"))
 
