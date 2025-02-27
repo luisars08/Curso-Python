@@ -2,9 +2,9 @@ import os
 
 import io
 
-os.makedirs("PracticaDirectorio")
+os.makedirs("PracticaDirectorio2")
 
-os.chdir("PracticaDirectorio")
+os.chdir("PracticaDirectorio2")
 
 archivo_externo = open("Ejemplo.txt", "w")
 
@@ -14,4 +14,3 @@ print(os.getcwd())
 
 print(os.listdir("./"))
 
-archivo_externo.close()
