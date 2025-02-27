@@ -2,17 +2,10 @@ import os
 
 import io
 
-#os.makedirs("PracticaDirectorio2")
+lista_archivos= os.listdir("./")
 
-os.chdir("PracticaDirectorio2")
+for archivo in lista_archivos:
 
-os.remove("Ejemplo.docx")
-
-os.chdir("../")
-
-os.rmdir("PracticaDirectorio2")
-
-#print(os.getcwd())
-
-#print(os.listdir("./"))
-
+    if archivo == "tirar.py":
+        
+        os.remove(archivo)
