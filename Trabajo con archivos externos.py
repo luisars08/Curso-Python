@@ -6,9 +6,7 @@ import io
 
 os.chdir("PracticaDirectorio2")
 
-archivo_externo = open("Ejemplo.docx", "w")
-
-archivo_externo.write("Texto de ejemplo...")
+os.rename("Ejemplo.txt", "ArchivoEliminar.txt")
 
 print(os.getcwd())
 
