@@ -1,6 +1,12 @@
-def par_impar(num):
-    return "Odd" if num % 2 else "Even"
+def suma_array(lista):
+    contador = 0
+    for num in lista:
+        if num > 0:
+            contador+=num
+    return contador
+        
 
-num = int(input("Dame un número: "))
 
-print(par_impar(num))
+lista_numeros = [1, -4, 7, 12]
+
+print(suma_array(lista_numeros))
