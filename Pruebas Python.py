@@ -1,35 +1,14 @@
-def minimo(lista):
 
-    min_num = lista[0]
+def prom(lista):
 
-    for numero in lista:
-        if min_num > numero:
-            min_num = numero
-         
-    return min_num
+    if len(lista) == 0:
+        return 0
+    return sum(lista)/len(lista)
 
-def maximo(lista):
-    
-    max_num = lista[0]
+def find_average(array):
+    return sum(array) / len(array) if array else 0
 
-    for numero in lista:
-        if max_num < numero:
-            max_num = numero
-         
-    return max_num
+lista = [10,10,10]
+#lista = []
 
-def minimum(arr):
-    return min(arr)
-
-def maximum(arr):
-    return max(arr)
-
-lista=[4,6,2,1,9,63,-134,566]
-#lista = [5]
-#lista = [42, 54, 65, 87, 0] 
-#lista = [-52, 56, 30, 29, -54, 0, -110] 
-print(minimo(lista))
-print(maximo(lista))
-
-print(minimum(lista))
-print(maximum(lista))
+print(find_average(lista))
