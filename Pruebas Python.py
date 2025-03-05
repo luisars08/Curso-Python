@@ -1,15 +1,35 @@
-def suma_array(lista):
-    contador = 0
-    for num in lista:
-        if num > 0:
-            contador+=num
-    return contador
+def minimo(lista):
 
-def positive_sum(arr):
-    return sum(x for x in arr if x > 0)
-        
+    min_num = lista[0]
 
+    for numero in lista:
+        if min_num > numero:
+            min_num = numero
+         
+    return min_num
 
-lista_numeros = [1, -4, 7, 12]
+def maximo(lista):
+    
+    max_num = lista[0]
 
-print(suma_array(lista_numeros))
+    for numero in lista:
+        if max_num < numero:
+            max_num = numero
+         
+    return max_num
+
+def minimum(arr):
+    return min(arr)
+
+def maximum(arr):
+    return max(arr)
+
+lista=[4,6,2,1,9,63,-134,566]
+#lista = [5]
+#lista = [42, 54, 65, 87, 0] 
+#lista = [-52, 56, 30, 29, -54, 0, -110] 
+print(minimo(lista))
+print(maximo(lista))
+
+print(minimum(lista))
+print(maximum(lista))
