@@ -1,14 +1,8 @@
 
-def prom(lista):
+def calculo_distancia(arr):
+    return True if (arr[1]*arr[2]) >= arr[0] else False
 
-    if len(lista) == 0:
-        return 0
-    return sum(lista)/len(lista)
+lista = [50,25,2]
+lista2 = [100,50,1]
 
-def find_average(array):
-    return sum(array) / len(array) if array else 0
-
-lista = [10,10,10]
-#lista = []
-
-print(find_average(lista))
+print(calculo_distancia(lista2))
