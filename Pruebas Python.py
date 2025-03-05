@@ -1,16 +1,6 @@
-from io import open
+def par_impar(num):
+    return "Odd" if num % 2 else "Even"
 
-archivo_prueba = open("primerArchivoTarea.txt", "r")
+num = int(input("Dame un número: "))
 
-lineas = archivo_prueba.readlines()
-
-archivo_prueba.close()
-
-palabra = "Un recuerdo invade mi mente."
-palabra = "noche"
-#print(lineas[0])
-
-for parrafo in lineas:
-    if palabra in parrafo:
-        break
-    print(parrafo)
+print(par_impar(num))
