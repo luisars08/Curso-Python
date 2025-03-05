@@ -4,6 +4,9 @@ def suma_array(lista):
         if num > 0:
             contador+=num
     return contador
+
+def positive_sum(arr):
+    return sum(x for x in arr if x > 0)
         
 
 
