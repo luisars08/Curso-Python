@@ -1,8 +1,11 @@
+def filtro_lista(lista):
+   
+   return [x for x in lista if isinstance(x, int)]
 
-def calculo_distancia(arr):
-    return True if (arr[1]*arr[2]) >= arr[0] else False
+   
 
-lista = [50,25,2]
-lista2 = [100,50,1]
+lista = [1,2,'a','b']
 
-print(calculo_distancia(lista2))
+lista2 = [1,2,'aasf','1','123',123]
+
+print(filtro_lista(lista2))
