@@ -13,7 +13,9 @@ cuadroTexto.grid(row=0, column=1)
 cuadroTexto.config(fg="red")
 
 apellidoLb = Label(myFrame,text="Apellido: ").grid(row=1,column=0, sticky=W)
-apellidoEt = Entry(myFrame).grid(row=1,column=1)
+apellidoEt = Entry(myFrame)
+apellidoEt.grid(row=1,column=1)
+apellidoEt.config(fg="red")
 
 mailLb = Label(myFrame,text="Mail: ").grid(row=2,column=0, sticky=W)
 mailEt = Entry(myFrame).grid(row=2,column=1)
