@@ -1,21 +1,12 @@
 
-def Unique_in_order(sequence):
-    if not sequence:
-        return []
+def banjo(nombre):
+    if nombre[0] == "R" or nombre[0] == "r"
+        return nombre + " toca el banjo"
+    else:
+        return nombre + " no toca el banjo"
     
-    # Inicializamos la lista con el primer elemento
-    unique_list = [sequence[0]]
-    
-    # Recorremos desde el segundo elemento
-    for i in range(1, len(sequence)):
-        # Si el elemento actual es diferente al anterior, lo agregamos
-        if sequence[i] != sequence[i-1]:
-            unique_list.append(sequence[i])
-    
-    return unique_list
+nombre = "Raúl"
+nombre1="Calamardo"
 
-print(Unique_in_order('AAAABBBCCDAABBB'))
-print(Unique_in_order([1, 2, 2, 3, 3]))
-print(Unique_in_order('ABBCcAD'))
-print(Unique_in_order([]))
-print(Unique_in_order('A'))     
+print(banjo(nombre))
+print(banjo(nombre1))
