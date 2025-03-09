@@ -1,12 +1,20 @@
 
-def banjo(nombre):
-    if nombre[0] == "R" or nombre[0] == "r"
-        return nombre + " toca el banjo"
-    else:
-        return nombre + " no toca el banjo"
-    
-nombre = "Raúl"
-nombre1="Calamardo"
+def abbrev_name(name):
+    siglas=[]
+    nsigla=[]
+    for i in name.split(" "):
+        may = i.capitalize()
+        siglas.append(may)
+    for letra in siglas:
+        nm = letra[0]
+        nsigla.append(nm)
+    return nsigla[0] + "." + nsigla[1]
 
-print(banjo(nombre))
-print(banjo(nombre1))
+
+def abbrevName(name):
+    return '.'.join(w[0] for w in name.split()).upper()
+
+name = "luis rosado"
+
+print(abbrev_name(name))
+print(abbrevName(name))
