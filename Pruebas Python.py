@@ -1,20 +1,11 @@
-
-def abbrev_name(name):
-    siglas=[]
-    nsigla=[]
-    for i in name.split(" "):
-        may = i.capitalize()
-        siglas.append(may)
-    for letra in siglas:
-        nm = letra[0]
-        nsigla.append(nm)
-    return nsigla[0] + "." + nsigla[1]
+import math
 
 
-def abbrevName(name):
-    return '.'.join(w[0] for w in name.split()).upper()
+def suma_cuadrada(lista):
+    return sum(x**2 for x in lista)
 
-name = "luis rosado"
 
-print(abbrev_name(name))
-print(abbrevName(name))
+
+lis=[1,2,2]
+
+print(suma_cuadrada(lis))
