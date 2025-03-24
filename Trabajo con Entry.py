@@ -59,13 +59,7 @@ nombreLabelComentarios.grid(row=5, column=0, sticky="w")
 
 def funcionBoton():
     
-    #MessageBox.showinfo("Saludo", "Hola desde Tkinter")
-    nombre = miVariable.get()
-    apellido = miVariableApe.get()
-    contrasenia = miVariablePas.get()
-    mail = miVariableMai.get()
-    direccion = miVariableDir.get()
-    MessageBox.showinfo("Saludos",nombre + " " + apellido + "\nMail: " + mail + " Pass: " + contrasenia + "\n"  + "Direccion: " + direccion)
+    MessageBox.showinfo("Información rescatada", cuadroTextoNombre.get() + " " + cuadroTextoApellido.get() + " "  + cuadroTextoContra.get())
 
 botonEnviar=Button(root, text="Enviar", command=funcionBoton)
 
