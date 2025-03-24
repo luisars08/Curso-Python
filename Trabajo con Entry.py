@@ -59,7 +59,8 @@ nombreLabelComentarios.grid(row=5, column=0, sticky="w")
 
 def funcionBoton():
     
-    MessageBox.showinfo("Información rescatada", cuadroTextoNombre.get() + " " + cuadroTextoApellido.get() + " "  + cuadroTextoContra.get())
+    #MessageBox.showinfo("Información rescatada", cuadroTextoNombre.get() + " " + cuadroTextoApellido.get() + " "  + cuadroTextoContra.get())
+    cuadroTextoOpiniones.insert(INSERT, "Esto es una prueba de texto")
 
 botonEnviar=Button(root, text="Enviar", command=funcionBoton)
 
