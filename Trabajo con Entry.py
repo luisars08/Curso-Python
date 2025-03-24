@@ -7,23 +7,28 @@ root = Tk()
 myFrame = Frame(root, width=1000, height=550)
 myFrame.pack()
 
-miVariable = StringVar()
+miVariable    = StringVar()
+miVariableApe = StringVar()
+miVariablePas = StringVar()
+miVariableMai = StringVar()
+miVariableDir = StringVar()
+
 
 cuadroTextoNombre=Entry(myFrame, textvariable=miVariable)
 cuadroTextoNombre.grid(row=0,column=1, padx=15, pady=15)
 cuadroTextoNombre.config(fg="red")
 
-cuadroTextoApellido=Entry(myFrame)
+cuadroTextoApellido=Entry(myFrame, textvariable=miVariableApe)
 cuadroTextoApellido.grid(row=1,column=1, padx=15, pady=15)
 
-cuadroTextoContra=Entry(myFrame)
+cuadroTextoContra=Entry(myFrame, textvariable=miVariablePas)
 cuadroTextoContra.grid(row=2,column=1, padx=15, pady=15)
 cuadroTextoContra.config(show="*")
 
-cuadroTextoMail=Entry(myFrame)
+cuadroTextoMail=Entry(myFrame, textvariable=miVariableMai)
 cuadroTextoMail.grid(row=3,column=1, padx=15, pady=15)
 
-cuadroTextoDireccion=Entry(myFrame)
+cuadroTextoDireccion=Entry(myFrame, textvariable=miVariableDir)
 cuadroTextoDireccion.grid(row=4,column=1, padx=15, pady=15)
 
 cuadroTextoOpiniones=Text(myFrame, width=15, height=10)
@@ -55,7 +60,12 @@ nombreLabelComentarios.grid(row=5, column=0, sticky="w")
 def funcionBoton():
     
     #MessageBox.showinfo("Saludo", "Hola desde Tkinter")
-    miVariable.set("Luis")
+    nombre = miVariable.get()
+    apellido = miVariableApe.get()
+    contrasenia = miVariablePas.get()
+    mail = miVariableMai.get()
+    direccion = miVariableDir.get()
+    MessageBox.showinfo("Saludos",nombre + " " + apellido + "\nMail: " + mail + " Pass: " + contrasenia + "\n"  + "Direccion: " + direccion)
 
 botonEnviar=Button(root, text="Enviar", command=funcionBoton)
 
