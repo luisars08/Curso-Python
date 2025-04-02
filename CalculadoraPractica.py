@@ -57,20 +57,15 @@ def pulsacionesTecla(numPulsado):
             digitoDisplay.set("0")
         elif numPulsado == "." and digitoDisplay.get() == "0":
             digitoDisplay.set(digitoDisplay.get() + numPulsado)
-            coma = True
+            
 
         elif numPulsado != "0" and digitoDisplay.get() == "0":
             digitoDisplay.set(numPulsado)
-
         
-        elif numPulsado == "." and coma == False:
-            digitoDisplay.set(digitoDisplay.get() + numPulsado)
-            coma = True
-        elif numPulsado != "." and coma == True:
+        else:
+
             digitoDisplay.set(digitoDisplay.get() + numPulsado)
 
-        elif numPulsado != "." and coma == False:
-            digitoDisplay.set(digitoDisplay.get() + numPulsado)
 
 
 
@@ -84,9 +79,14 @@ def suma(num):
 
     resultado += float(num)
 
-    operacion = "suma"
+    if resultado.is_integer():
+        digitoDisplay.set(int(resultado))
 
-    digitoDisplay.set(resultado)
+        operacion = "suma"
+    else:
+        operacion = "suma"
+        digitoDisplay.set(resultado)
+
 
 
 #--------------------------funcion total---------------------------------
@@ -95,9 +95,14 @@ def total():
 
     global resultado
 
-    digitoDisplay.set(resultado + float(digitoDisplay.get()))
+    if (resultado + float(digitoDisplay.get())).is_integer():
+        digitoDisplay.set(int(resultado + float(digitoDisplay.get())))
+        resultado = 0
+    else:
+
+        digitoDisplay.set(resultado + float(digitoDisplay.get()))
     
-    resultado = 0
+        resultado = 0
 
 
 #---------------------------primera fila------------------------------------
