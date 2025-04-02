@@ -10,6 +10,8 @@ operacion = ""
 
 resultado = 0
 
+coma = False
+
 digitoDisplay = StringVar()
 
 display = Entry(miFrame, textvariable=digitoDisplay, font=" Arial 15")
@@ -19,6 +21,21 @@ display.config(background="black", fg="#00db00", justify="right", width=15)
 
 digitoDisplay.set("0")
 
+#--------------------------funcion alternativa coma------------------------
+
+def pulsacion_coma():
+
+    contador = 0
+
+    for i in digitoDisplay.get():
+
+        if i == ".":
+
+            contador += 1
+
+    if contador == 0:
+
+        digitoDisplay.set(digitoDisplay.get() + ".")
 
 #--------------------------pulsaciones numeros-----------------------------
 
@@ -26,9 +43,12 @@ def pulsacionesTecla(numPulsado):
 
     global operacion
 
+    global coma
+
     if operacion != "":
 
         digitoDisplay.set(numPulsado)
+
         operacion = ""
 
     else:
@@ -37,11 +57,19 @@ def pulsacionesTecla(numPulsado):
             digitoDisplay.set("0")
         elif numPulsado == "." and digitoDisplay.get() == "0":
             digitoDisplay.set(digitoDisplay.get() + numPulsado)
+            coma = True
+
         elif numPulsado != "0" and digitoDisplay.get() == "0":
             digitoDisplay.set(numPulsado)
-        
-        else:
 
+        
+        elif numPulsado == "." and coma == False:
+            digitoDisplay.set(digitoDisplay.get() + numPulsado)
+            coma = True
+        elif numPulsado != "." and coma == True:
+            digitoDisplay.set(digitoDisplay.get() + numPulsado)
+
+        elif numPulsado != "." and coma == False:
             digitoDisplay.set(digitoDisplay.get() + numPulsado)
 
 
@@ -54,7 +82,7 @@ def suma(num):
 
     global resultado
 
-    resultado += int(num)
+    resultado += float(num)
 
     operacion = "suma"
 
@@ -67,7 +95,7 @@ def total():
 
     global resultado
 
-    digitoDisplay.set(resultado + int(digitoDisplay.get()))
+    digitoDisplay.set(resultado + float(digitoDisplay.get()))
     
     resultado = 0
 
@@ -109,7 +137,7 @@ botonrest.grid(row=4, column=4)
 
 boton0 = Button(miFrame, text="0", width=5, command=lambda:pulsacionesTecla("0"))
 boton0.grid(row=5, column=1)
-botoncoma = Button(miFrame, text=",", width=5, command=lambda:pulsacionesTecla("."))
+botoncoma = Button(miFrame, text=",", width=5, command=lambda:pulsacion_coma())
 botoncoma.grid(row=5, column=2)
 botonigual = Button(miFrame, text="=", width=5, command=lambda:total())
 botonigual.grid(row=5, column=3)
