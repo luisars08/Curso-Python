@@ -1,4 +1,5 @@
 from tkinter import *
+import re
 
 raiz = Tk()
 
@@ -30,8 +31,8 @@ class Calculadora():
         boton4 = self.colocar_Boton(4)
         boton5 = self.colocar_Boton(5)
         boton6 = self.colocar_Boton(6)
-        botonx = self.colocar_Boton("*")
-        botonx.config(text="x")
+        botonx = self.colocar_Boton(u"\u00D7")
+        #botonx.config(text="x")
 
         #-------------------------------------------------
         
@@ -69,6 +70,7 @@ class Calculadora():
             self.operacion += str(valor)
             self.mostrar_pantalla(valor)
         elif not mostrar and valor == "=":
+            self.operacion=re.sub(u"\u00D7","*",self.operacion)
             self.borrar_pantalla()
             self.mostrar_pantalla(str(eval(self.operacion)))
         else:
