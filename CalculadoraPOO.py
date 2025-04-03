@@ -23,21 +23,22 @@ class Calculadora():
         boton7 = self.colocar_Boton(7)
         boton8 = self.colocar_Boton(8)
         boton9 = self.colocar_Boton(9)
-        botondiv = self.colocar_Boton("/", mostrar=False)
+        botondiv = self.colocar_Boton("/")
 
         #-------------------------------------------------
         
         boton4 = self.colocar_Boton(4)
         boton5 = self.colocar_Boton(5)
         boton6 = self.colocar_Boton(6)
-        botonx = self.colocar_Boton("x", mostrar=False)
+        botonx = self.colocar_Boton("*")
+        botonx.config(text="x")
 
         #-------------------------------------------------
         
         boton1 = self.colocar_Boton(1)
         boton2 = self.colocar_Boton(2)
         boton3 = self.colocar_Boton(3)
-        botonrest = self.colocar_Boton("-", mostrar=False)
+        botonrest = self.colocar_Boton("-")
 
         #-------------------------------------------------
         
