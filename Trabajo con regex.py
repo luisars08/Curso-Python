@@ -1,7 +1,13 @@
 import re
 
-cadena="Estoy trabajando con Python en domingo y Semana Santa. El próximo domingo no pienso grabar ningún vídeo"
+lista_nombres = ["Antonio Banderas", "Salma Hayek", "Tomás Cruceros", "Antonio Resines", "Friedrich Hayek"]
 
-busqueda = "domingo"
+for nombre in lista_nombres:
 
-print(len(re.findall(busqueda,cadena)))
+    if re.findall("Hayek$",nombre): #Termina en Hayek
+        print(nombre)
+
+for nombre in lista_nombres:
+
+    if re.findall("^Antonio",nombre): #Empieza por Antonio
+        print(nombre)
