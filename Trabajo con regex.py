@@ -1,13 +1,9 @@
 import re
 
-lista_nombres = ["Antonio Banderas", "Salma Hayek", "Tomás Cruceros", "Antonio Resines", "Friedrich Hayek"]
+lista_terminos = ["camión", "camion", "niños","niñas","ejemplo"]
 
-for nombre in lista_nombres:
+for termino in lista_terminos:
 
-    if re.findall("Hayek$",nombre): #Termina en Hayek
-        print(nombre)
+    if re.findall("cami[oó]n",termino):
+        print(termino)
 
-for nombre in lista_nombres:
-
-    if re.findall("^Antonio",nombre): #Empieza por Antonio
-        print(nombre)
