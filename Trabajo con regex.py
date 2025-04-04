@@ -1,13 +1,7 @@
 import re
 
-cadena="Estoy trabajando con Python en domingo y semana santa"
+cadena="Estoy trabajando con Python en domingo y Semana Santa. El próximo domingo no pienso grabar ningún vídeo"
 
 busqueda = "domingo"
 
-texto_encontrado = re.search(busqueda,cadena)
-
-print(texto_encontrado.start())
-
-print(texto_encontrado.end())
-
-print(texto_encontrado.span())
+print(len(re.findall(busqueda,cadena)))
