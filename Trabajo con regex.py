@@ -4,10 +4,10 @@ cadena="Estoy trabajando con Python en domingo y semana santa"
 
 busqueda = "domingo"
 
-if re.search(busqueda,cadena) is not None:
+texto_encontrado = re.search(busqueda,cadena)
 
-    print("Se encontró el termino " , busqueda)
+print(texto_encontrado.start())
 
-else:
+print(texto_encontrado.end())
 
-    print("No se encontro el termino " , busqueda)
+print(texto_encontrado.span())
