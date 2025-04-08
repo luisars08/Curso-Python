@@ -6,7 +6,7 @@ nombre2 = "Juan Díaz"
 
 nombre3 = "Sandra Martín"
 
-if re.match("Carmen", nombre1):
+if re.match("carmen", nombre1,re.IGNORECASE):
     
     print("Ah :3")
 
