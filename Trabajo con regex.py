@@ -1,9 +1,15 @@
 import re
 
-lista_terminos = ["Ma:1","Se1","Ma2","Va1","Ba1","Se2","Ma.3","Ma4","Se:3","SeA","SeB","Va2","SeC"]
+nombre1 = "Carmen López"
 
-for termino in lista_terminos:
+nombre2 = "Juan Díaz"
 
-    if re.findall("Ma[.:]",termino):
-        print(termino)
+nombre3 = "Sandra Martín"
 
+if re.match("Carmen", nombre1):
+    
+    print("Ah :3")
+
+else:
+
+    print("No Turururu")
