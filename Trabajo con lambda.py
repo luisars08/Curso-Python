@@ -1,3 +1,5 @@
-potencia = lambda base, exponente: base**exponente
+formato = lambda comision: "¡{}!$".format(comision)
 
-print("La potencia es de: ",potencia(5,3))
+comision_Antonio = 6000
+
+print(formato(comision_Antonio))
