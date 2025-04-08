@@ -1,15 +1,15 @@
 import re
 
-nombre1 = "Carmen López"
+codigo1 = "asdsadsdadad255"
 
-nombre2 = "Juan Díaz"
+codigo2 = "asddasd133asdasdasd"
 
-nombre3 = "Sandra Martín"
+codigo3 = "asdasd255asdasdasdasdsadddsaasd"
 
-if re.match("carmen", nombre1,re.IGNORECASE):
+if re.search("255",codigo1):
     
-    print("Ah :3")
+    print("Código encontrado")
 
 else:
 
-    print("No Turururu")
+    print("No se encontró el código")
