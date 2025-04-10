@@ -1,9 +1,9 @@
 
-mi_lista = [(11,5),(15,7),(2,4),(15,19),(8,4)]
+musicos = ["Paul McCartney","Bruce Springsteen", "Tina Turner", "Justin Bieber", "Elton Jhon"]
 
-"""def ordena_lista(t):
-    return t[0]+t[1]"""
+def ordena_musicos(m):
+    return m.split()[1]
 
-mi_lista.sort(key=lambda t:t[0]+t[1])
+musicos.sort(key=ordena_musicos)
 
-print(mi_lista)
+print(musicos)
