@@ -18,7 +18,7 @@ def suma():
 
     print(25+30)
 
-
+@funcion_decoradora
 def resta():
 
     print(80-25)
