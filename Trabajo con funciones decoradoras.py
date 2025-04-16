@@ -1,10 +1,10 @@
 def funcion_decoradora(funcion_parametro):
 
-    def funcion_interna():
+    def funcion_interna(*args):
 
         print("A continuación voy a realizar un cálculo")
 
-        funcion_parametro()
+        funcion_parametro(*args)
 
         print("Ya he terminado el trabajo")
 
@@ -14,16 +14,16 @@ def funcion_decoradora(funcion_parametro):
 
 
 @funcion_decoradora
-def suma():
+def suma(num1,num2):
 
-    print(25+30)
+    print(num1+num2)
 
 @funcion_decoradora
-def resta():
+def resta(num1,num2):
 
-    print(80-25)
+    print(num1-num2)
 
 
-suma()
+suma(5,7)
 
-resta()
+resta(20,5)
