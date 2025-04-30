@@ -8,16 +8,15 @@ miCursor = miConexion.cursor()
 
 #miCursor.execute("INSERT INTO PRODUCTOS VALUES('Camiseta',25,'Moda')")
 
-muchosProductos = [
+miCursor.execute("SELECT * FROM PRODUCTOS")
 
-    ("Patin",100,"Deportes"),
-    ("Cenicero",20,"Cerámicas"),
-    ("Pantalón",80,"Moda")
-]
+muchosProductos = miCursor.fetchall()
 
-miCursor.executemany("INSERT INTO PRODUCTOS VALUES(?,?,?)",muchosProductos)
+for p in muchosProductos:
 
-miConexion.commit()
+    print("Nombre: " , p[0] , " Precio: " , p[1] , " Categoría: " , p[2])
+
+#miConexion.commit()
 
 miCursor.close()
 
